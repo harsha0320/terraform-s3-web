@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error - Mrudula's Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Error - Mrudula's Website</h1>
+    </header>
+    
+    <section>
+        <h2>Oops! Something went wrong.</h2>
+        <p>We apologize for the inconvenience. Please try again later.</p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2024 Mrudula's Website. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+
+resource "aws_s3_bucket_object" "error" {
+    bucket = aws_s3_bucket.mybucket.id
+    key    = "error.html"
+    source = "error.html"
+    acl = "public-read"
+    content_type = "text/html"
+  }
